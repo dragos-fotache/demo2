@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo2
+  labels:
+    app: demo2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo2
+  template:
+    metadata:
+      labels:
+        app: demo2
+    spec:
+      containers:
+      - name: demo2
+        image: demo2:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 8181
